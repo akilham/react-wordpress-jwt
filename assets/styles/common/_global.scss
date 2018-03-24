@@ -1,0 +1,373 @@
+@include media-breakpoint-up(xs) { }
+
+html {
+	width: 100%;
+}
+
+body {
+	font-family: $ff-main;
+	background-color: $body-bg-colour;
+	color: $col-text;
+	font-size: 1em;
+	width: 100%;
+	min-height: 100%;
+}
+
+html, body {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}
+
+div#root {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+div.app {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	min-height: 100vh;
+
+	div.route {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		&.page {
+			overflow: scroll;
+		}
+
+		&.login {
+
+			.login-form {
+				text-align: center;
+
+				h3 {
+					color: #444;
+					text-transform: uppercase;
+					text-align: center;
+					margin: 3em 0 0.6em;
+					font-weight: normal;
+					display: inline-block;
+				}
+
+				h6 {
+					text-transform: uppercase;
+					font-size: 1em;
+					margin: 0 0 2em;
+				}
+
+				form {
+					width: 400px;
+					margin: 0 auto;
+					text-align: center;
+
+					label {
+						width: 100px;
+						color: black;
+					}
+
+					input {
+						width: 280px;
+					}
+
+					.btn {
+						margin-top: 1em;
+					}
+				}
+			}
+
+
+			.message {
+				margin: 0 auto 1em;
+				min-height: 80px;
+				max-width: 400px;
+				position: relative;
+
+				.text,
+				.spinner {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 100%;
+
+					transform: translate(-50%, -50%);
+				}
+
+				.text {
+					color: white;
+					padding: 15px;
+					border: 3px solid;
+					font-size: 0.9em;
+
+					&.error {
+						border-color: red;
+						background: darken(red, 25%);
+					}
+
+					&.success {
+						border-color: green;
+						background: darken(green, 25%);
+					}
+				}
+			}
+		}
+	}
+}
+
+h1, h2, h3 {
+	font-family: $ff-headings;
+}
+
+h4, h5 {
+	font-family: $ff-main;
+}
+
+
+.route.page {
+	.site-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 50px;
+		border-bottom: 2px solid black;
+
+		ul.menu {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				width: auto;
+				display: inline-block;
+				margin: 12px 30px;
+
+				a {
+					color: #666;
+
+					&.active {
+						font-weight: bold;
+						color: black;
+					}
+				}
+			}
+		}
+
+		.user-info {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			transform: translateY(-50%);
+
+			.small {
+				font-size: 0.5em;
+			}
+		}
+	}
+
+
+	h2 {
+		text-transform: uppercase;
+		margin-bottom: 0.3em;
+		font-size: 3em;
+	}
+
+	h3 {
+		border-bottom: 1px dashed black;
+		font-size: 2em;
+		text-transform: uppercase;
+		padding-bottom: 0.5em;
+		margin-bottom: 1em;
+		margin-top: 1em;
+		color: #666;
+		font-weight: normal;
+	}
+
+	.spinner {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		> div {
+			background-color: black;
+		}
+	}
+}
+
+.noscript-notice {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: yellow;
+	z-index: 100000;
+	text-align: center;
+	padding: 0.5em;
+}
+
+
+.btn {
+	text-transform: uppercase;
+	background: #999;
+	color: white;
+	border: 0;
+	border-radius: 3px;
+	padding: 9px 30px 7px;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background-color: darken(#999, 10%);
+		color: white;
+	}
+
+	&.orange {
+		background: #dba782;
+		color: black;
+
+		&:hover {
+			background-color: darken(#dba782, 10%);
+			color: black;
+		}
+	}
+
+	&.btn-small {
+		font-size: 0.5em;
+		padding: 7px 15px 5px;
+	}
+}
+
+
+
+
+.message-box {
+	position: fixed;
+	top: 0;
+	left: 20%;
+	right: 20%;
+	box-shadow: 10px 10px 5px green;
+	background: red;
+	color: black;
+	padding: 40px;
+	transform: translateY(-100%);
+	transition: all 1s;
+
+	&.open {
+		transform: translateY(0);
+	}
+}
+
+
+.post-list {
+	h5 {
+		font-size: 2em;
+	}
+}
+
+.spinner.loading {
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.spinner.loading > div {
+	background-color: white;
+	height: 100%;
+	width: 6px;
+	display: inline-block;
+	margin: 0 2px;
+
+	-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+	animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner.loading .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+
+.spinner.loading .rect3 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+.spinner.loading .rect4 {
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.spinner.loading .rect5 {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+}
+
+
+@-webkit-keyframes sk-stretchdelay {
+	0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+	20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+	0%, 40%, 100% {
+		transform: scaleY(0.4);
+		-webkit-transform: scaleY(0.4);
+	}  
+
+	20% {
+		transform: scaleY(1.0);
+		-webkit-transform: scaleY(1.0);
+	}
+}
+
+
+
+// 544px and up
+@include media-breakpoint-up(sm) { }
+
+// 768px and up
+@include media-breakpoint-up(md) { }
+
+// 992px and up
+@include media-breakpoint-up(lg) { }
+
+// 1200px and up
+@include media-breakpoint-up(xl) { }
+
+// 1572px and up
+@include media-breakpoint-up(xxl) { }
+
+
+
+/* other media queries */
+
+/* max-width
+@include media-breakpoint-down(xs) { ... } - max-width: 543px
+@include media-breakpoint-down(sm) { ... } - max-width: 767px
+@include media-breakpoint-down(md) { ... } - max-width: 991px
+@include media-breakpoint-down(lg) { ... } - max-width: 1199px
+@include media-breakpoint-down(xl) { ... } - max-width: 1571px
+@include media-breakpoint-down(xxl) { ... } - n/a as breakpoint has no upper bound on its width
+*/
+
+/* only specific breakpoint
+@include media-breakpoint-only(xs) { ... } - max-width 543px
+@include media-breakpoint-only(sm) { ... } - min-width 544px and max-width 767px
+@include media-breakpoint-only(md) { ... } - min-width 768px and max-width 991px
+@include media-breakpoint-only(lg) { ... } - min-width 992px and max-width 1199px
+@include media-breakpoint-only(xl) { ... } - min-width 1200px and max-width 1571px
+@include media-breakpoint-only(xxl) { ... } min-width 1572px
+*/
+
+/* span multiple breakpoints
+@include media-breakpoint-between(md, lg) { ... } min-width 768px and max-width 1199px
+*/

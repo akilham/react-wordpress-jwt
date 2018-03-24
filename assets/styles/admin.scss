@@ -1,0 +1,32 @@
+#wpwrap {
+	background-image: url('../images/shards-full-bottom.png');
+	background-size: contain;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+}
+
+
+
+body.wp-admin {
+	&.post-type-slides {
+		.acf-field-image {
+			width: 48%;
+			display: inline-block;
+			float: left;
+			clear: none;
+		}
+
+		.acf-tab-wrap,
+		.acf-field-5a73bbf1a5276,
+		.acf-field-5a73bc03a5277 {
+			width: 48%;
+			display: inline-block;
+			float: right;
+			clear: none;
+		}
+	}
+
+	#wpb_visual_composer {
+		min-height: 600px;
+	}
+}

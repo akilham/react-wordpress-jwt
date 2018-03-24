@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "main.js": {
+      "main": true
+    },
+    "app.js": {
+      "files": [
+        "scripts/plugins.js",
+        "scripts/main.js"
+      ]
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "admin.css": {
+      "files": [
+        "styles/admin.scss"
+      ]
+    }
+  },
+  "config": {
+    "devUrl": "http://react-wordpress-jwt.test"
+  }
+}

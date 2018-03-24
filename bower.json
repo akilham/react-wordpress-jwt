@@ -1,0 +1,12 @@
+{
+  "name": "react-wp-jwt-test-theme",
+  "homepage": "https://github.com/akilham",
+  "authors": [
+    "Andrew Kilham <arkilham@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.4"
+  }
+}

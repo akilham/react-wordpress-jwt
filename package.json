@@ -1,0 +1,81 @@
+{
+  "name": "react-wp-jwt-test-theme",
+  "version": "1.0.0",
+  "author": "Andrew Kilham <arkilham@gmail.com>",
+  "homepage": "https://github.com/akilham",
+  "private": true,
+  "repository": {
+    "type": "git"
+  },
+  "bugs": {},
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "build": "bower install && gulp",
+    "jshint": "gulp jshint",
+    "jscs": "jscs gulpfile.js assets/scripts/*.js"
+  },
+  "engines": {
+    "node": ">= 4.5"
+  },
+  "devDependencies": {
+    "asset-builder": "^1.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.8.2",
+    "browserify": "^15.2.0",
+    "chai": "^4.1.2",
+    "chai-enzyme": "^1.0.0-beta.0",
+    "deepmerge": "^2.1.0",
+    "del": "^2.2.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-changed": "^1.3.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-duration": "0.0.0",
+    "gulp-flatten": "0.3.1",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^2.0.0",
+    "he": "^1.1.1",
+    "imagemin-pngcrush": "^5.0.0",
+    "jsdom": "11.6.2",
+    "jsdom-global": "3.0.2",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.0.1",
+    "lazypipe": "^1.0.1",
+    "merge-stream": "^1.0.1",
+    "minimist": "^1.1.3",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^16.2.0",
+    "run-sequence": "^2.2.1",
+    "sinon": "^4.4.6",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "wiredep": "^4.0.0"
+  },
+  "dependencies": {}
+}

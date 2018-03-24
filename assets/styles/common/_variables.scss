@@ -1,0 +1,64 @@
+// Grid settings
+$enable-flex:           false;
+$main-sm-columns:       12;
+$sidebar-sm-columns:    3;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1572px
+);
+
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px,
+  xxl: 1200px
+);
+
+
+// Colors
+$brand-black:       #000000;
+$brand-white:       #ffffff;
+
+$grey-dark:                 #373a3c;
+$grey:                      #55595c;
+$grey-light:                #818a91;
+$grey-lighter:              #eceeef;
+$grey-lightest:             #f7f7f9;
+
+
+$brand-primary:         $grey-dark;
+$brand-secondary:       $grey-light;
+
+
+
+$col-text: 				$grey-dark;
+$col-text-alt-bg: 		$grey-lightest;
+
+$body-bg-colour: 		$brand-white;
+$header-bg-colour: 		'transparent';
+$footer-bg-colour: 		$grey-lighter;
+
+$ff-main: 				Helvetica, Verdana, sans-serif;
+$ff-headings: 			$ff-main;
+
+$menu-font-size: 		18px;
+$menu-font-size-small: 	$menu-font-size;
+$menu-lr-padding: 		35px;
+$menu-lr-padding-small: $menu-lr-padding * 0.7;
+
+$header-height: 		100px;
+$brand-logo-height: 	80px;
+$menu-height:			100px;
+
+$header-height-small: 	$header-height * 0.7;
+$brand-logo-height-small: $brand-logo-height * 0.7;
+$menu-height-small: 	$menu-height * 0.7;
+
+$header-full-width:     false; // whether the header should be full width or inside the grid on large screens

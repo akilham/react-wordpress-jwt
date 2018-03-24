@@ -1,0 +1,61 @@
+.comment-list {
+  @extend .list-unstyled;
+}
+.comment-list ol {
+  list-style: none;
+}
+.comment-form p {
+  @extend .form-group;
+}
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+  @extend .form-control;
+}
+.comment-form input[type="submit"] {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+
+// 544px and up
+@include media-breakpoint-up(sm) { }
+
+// 768px and up
+@include media-breakpoint-up(md) { }
+
+// 992px and up
+@include media-breakpoint-up(lg) { }
+
+// 1200px and up
+@include media-breakpoint-up(xl) { }
+
+// 1572px and up
+@include media-breakpoint-up(xxl) { }
+
+
+
+/* other media queries */
+
+/* max-width
+@include media-breakpoint-down(xs) { ... } - max-width: 543px
+@include media-breakpoint-down(sm) { ... } - max-width: 767px
+@include media-breakpoint-down(md) { ... } - max-width: 991px
+@include media-breakpoint-down(lg) { ... } - max-width: 1199px
+@include media-breakpoint-down(xl) { ... } - max-width: 1571px
+@include media-breakpoint-down(xxl) { ... } - n/a as breakpoint has no upper bound on its width
+*/
+
+/* only specific breakpoint
+@include media-breakpoint-only(xs) { ... } - max-width 543px
+@include media-breakpoint-only(sm) { ... } - min-width 544px and max-width 767px
+@include media-breakpoint-only(md) { ... } - min-width 768px and max-width 991px
+@include media-breakpoint-only(lg) { ... } - min-width 992px and max-width 1199px
+@include media-breakpoint-only(xl) { ... } - min-width 1200px and max-width 1571px
+@include media-breakpoint-only(xxl) { ... } min-width 1572px
+*/
+
+/* span multiple breakpoints
+@include media-breakpoint-between(md, lg) { ... } min-width 768px and max-width 1199px
+*/

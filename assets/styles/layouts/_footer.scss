@@ -1,0 +1,94 @@
+footer.site-footer {
+	background-color: $footer-bg-colour;
+	color: $col-text;
+	padding: ms(6) 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	.brand-info {
+		margin: 3em 0;
+	}
+
+	.copyright-info {
+		margin-bottom: 1em;
+	}
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.top-link {
+		position: relative;
+		cursor: pointer;
+		color: $col-text;
+
+		.glyphicon {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 1.5em;
+			transition: top 0.5s;
+		}
+
+		span.text {
+			margin-top: 1em;
+			position: relative;
+			top: 1em;
+		}
+
+		&:hover {
+			.glyphicon {
+				top: -0.5em;
+			}
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+
+// 544px and up
+@include media-breakpoint-up(sm) { }
+
+// 768px and up
+@include media-breakpoint-up(md) { }
+
+// 992px and up
+@include media-breakpoint-up(lg) { }
+
+// 1200px and up
+@include media-breakpoint-up(xl) { }
+
+// 1572px and up
+@include media-breakpoint-up(xxl) { }
+
+
+
+/* other media queries */
+
+/* max-width
+@include media-breakpoint-down(xs) { ... } - max-width: 543px
+@include media-breakpoint-down(sm) { ... } - max-width: 767px
+@include media-breakpoint-down(md) { ... } - max-width: 991px
+@include media-breakpoint-down(lg) { ... } - max-width: 1199px
+@include media-breakpoint-down(xl) { ... } - max-width: 1571px
+@include media-breakpoint-down(xxl) { ... } - n/a as breakpoint has no upper bound on its width
+*/
+
+/* only specific breakpoint
+@include media-breakpoint-only(xs) { ... } - max-width 543px
+@include media-breakpoint-only(sm) { ... } - min-width 544px and max-width 767px
+@include media-breakpoint-only(md) { ... } - min-width 768px and max-width 991px
+@include media-breakpoint-only(lg) { ... } - min-width 992px and max-width 1199px
+@include media-breakpoint-only(xl) { ... } - min-width 1200px and max-width 1571px
+@include media-breakpoint-only(xxl) { ... } min-width 1572px
+*/
+
+/* span multiple breakpoints
+@include media-breakpoint-between(md, lg) { ... } min-width 768px and max-width 1199px
+*/

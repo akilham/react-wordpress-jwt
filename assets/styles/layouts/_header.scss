@@ -1,0 +1,254 @@
+header.site-header {
+	background-color: $header-bg-colour;
+	height: $header-height;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+	transition: height 0.5s;
+
+	a.brand {
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+
+		img {
+			height: $brand-logo-height;
+			transition: height 0.5s;
+		}
+	}
+
+	.menu-close {
+		opacity: 0;
+	}
+
+	.faux-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 5;
+
+		background-color: $header-bg-colour;
+	}
+
+	.container {
+		width: 100%;
+		height: 100%;
+		position: relative;
+
+		@if $header-full-width {
+			max-width: 100%;
+		}
+	}
+}
+
+// mobile menu icon
+.menu-icon {
+	font-size: 40px;
+	margin-top: 30px;
+	line-height: 1;
+	cursor: pointer;
+	position: relative;
+	z-index: 10;
+
+	transition: all 0.5s;
+
+	.fa {
+		position: absolute;
+		right: 15px;
+
+		transition: opacity 0.5s;
+	}
+}
+
+body.nav-expanded {
+	overflow: hidden;
+
+	header.banner {
+		.menu-open {
+			opacity: 0;
+		}
+
+		.menu-close {
+			opacity: 1;
+		}
+	}
+
+	ul.main-menu {
+		transform: translateX(0);
+	}
+}
+
+/* main menu styles */
+ul.main-menu {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	display: block;
+	z-index: -10;
+
+	transform: translateY(-100%);
+	background-color: $header-bg-colour;
+	border-bottom: 3px solid $brand-primary;
+
+	transition: all 0.5s;
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: $header-height;
+
+	li {
+		display: inline-block;
+		width: 100%;
+
+		a {
+			font-size: 1em;
+			color: $col-text;
+			line-height: 1;
+			display: block;
+
+			transition: font-size 0.5s, padding 0.5s;
+
+			&:hover, &:active {
+				background: none;
+			}
+		}
+	}
+}
+
+// offset the main container by the fixed header height
+main,
+aside.sidebar {
+	margin-top: $header-height;
+	// padding-top: 1em;
+	padding-bottom: ms(12);
+}
+
+/* styles for the small header used with $.shrinkHeaderOnScroll() */
+body.small-header {
+	header.banner {
+		height: $header-height-small;
+
+		a.brand {
+			img {
+				height: $brand-logo-height-small;
+			}
+		}
+	}
+
+	.menu-icon {
+		font-size: 30px;
+		margin-top: 20px;
+	}
+
+	ul.main-menu {
+		top: $header-height-small;
+	}
+
+	main,
+	aside.sidebar {
+		margin-top: $header-height-small;
+	}
+}
+
+
+
+// 544px and up
+@include media-breakpoint-up(sm) { }
+
+// 768px and up
+@include media-breakpoint-up(md) { 
+	header.banner {
+		.faux-bg {
+			display: none !important;
+		}
+	}
+
+	ul.main-menu {
+		top: 0;
+		left: auto;
+		height: $menu-height;
+		text-align: center;
+		border: 0;
+		z-index: 10;
+		background: none;
+
+		transform: translateY(0);
+
+		li {
+			display: inline-block;
+			width: auto;
+
+			a {
+				font-size: $menu-font-size;
+				padding: (($menu-height - $menu-font-size) / 2) $menu-lr-padding;
+
+				&:hover, 
+				&:active {
+					background-color: $brand-primary;
+					color: white;
+				}
+			}
+		}
+	}
+
+	body.small-header {
+		ul.main-menu {
+			height: $menu-height-small;
+			top: 0;
+
+			li {
+				a {
+					font-size: $menu-font-size-small;
+					padding: (($menu-height-small - $menu-font-size-small) / 2) $menu-lr-padding-small;
+				}
+			}
+		}
+	}
+
+	.menu-icon {
+		display: none;
+	}
+}
+
+// 992px and up
+@include media-breakpoint-up(lg) { }
+
+// 1200px and up
+@include media-breakpoint-up(xl) { }
+
+// 1572px and up
+@include media-breakpoint-up(xxl) { }
+
+
+
+/* other media queries */
+
+/* max-width
+@include media-breakpoint-down(xs) { ... } - max-width: 543px
+@include media-breakpoint-down(sm) { ... } - max-width: 767px
+@include media-breakpoint-down(md) { ... } - max-width: 991px
+@include media-breakpoint-down(lg) { ... } - max-width: 1199px
+@include media-breakpoint-down(xl) { ... } - max-width: 1571px
+@include media-breakpoint-down(xxl) { ... } - n/a as breakpoint has no upper bound on its width
+*/
+
+/* only specific breakpoint
+@include media-breakpoint-only(xs) { ... } - max-width 543px
+@include media-breakpoint-only(sm) { ... } - min-width 544px and max-width 767px
+@include media-breakpoint-only(md) { ... } - min-width 768px and max-width 991px
+@include media-breakpoint-only(lg) { ... } - min-width 992px and max-width 1199px
+@include media-breakpoint-only(xl) { ... } - min-width 1200px and max-width 1571px
+@include media-breakpoint-only(xxl) { ... } min-width 1572px
+*/
+
+/* span multiple breakpoints
+@include media-breakpoint-between(md, lg) { ... } min-width 768px and max-width 1199px
+*/
