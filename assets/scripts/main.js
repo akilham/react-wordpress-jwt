@@ -18,29 +18,6 @@
     // All pages
     'common': {
       init: function () {
-        // JavaScript to be fired on all pages
-
-        // toggle for the normal drop-down mobile menu
-        $('.menu-icon').clickToggle('body', 'nav-expanded');
-
-        // shrinks the header when a user scrolls away from the top of the page
-        // needs a fixed header to work
-        // see plugins.js for more info
-        $.shrinkHeaderOnScroll();
-
-        /* off-canvas slide menu 
-        $('.menu-icon').clickToggle('body', 'nav-expanded');
-         $('.slide-menu-container').on('click', function(e) {
-          if (e.target === this) {
-            $('body').removeClass('nav-expanded');
-          }
-        });
-        */
-
-        // smooth scrolling to links on the same page
-        // great for single page websites but could be useful on others too
-        // see plugins.js for more info
-        // $('a[href*="#"]:not([href="#"])').smoothScroll();
       },
       finalize: function () {
         // JavaScript to be fired on all pages, after page specific JS is fired
